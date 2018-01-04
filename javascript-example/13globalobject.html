@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+    function func(){
+      alert('Hello?');
+    }
+    func();
+    window.func(); // 전역객체 모든객체는 전역객체의 속성(property)
+    */
+
+    var o = {'func' : function(){
+      alert('Hello?');
+    }}
+    o.func();
+    window.o.func(); // 전역객체.속성/메소드 >> 웹프라우저에서 window라는 전역객체가 명시되지않아도 암시적으로 모든 객체는 전역객체의 프로퍼티이다.
+  </script>
+</body>
+</html>

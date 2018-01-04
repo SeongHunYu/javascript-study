@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*var vscope = 'global';
+    function fscope(){
+      alert(vscope);
+    }
+    fscope();*/
+
+    /*var vscope = 'global';
+    function fscope(){
+      var vscope = 'local' //var를 붙여서 지역번수로 변함
+      alert(vscope);
+    }
+    fscope(); // local
+    alert(vscope); //global*/
+
+    /*var vscope = 'global';
+    function fscope(){
+      vscope = 'local' // 글로벌 변수 'global'> 'local'
+      alert(vscope);
+    }
+    fscope();
+    alert(vscope); //global > local */
+
+    /*function a(){
+      var i = 0;  //지역변수,, i = 0는 전역변수
+    }
+    for(var i = 0; i < 5; i++){  //for문 i는 전역변수
+      a();
+      document.write(i);
+    }*/
+
+    /*var MYAPP = {} //전역변수   ++불가피하게 전역변수를 사용하겠다.
+      MYAPP.calculator = {
+        'left' : null,
+        'right' : null
+      }
+      MYAPP.coordinate = {
+        'left' : null,
+        'right' : null,
+      }
+
+      MYAPP.calculator.left = 10;
+      MYAPP.calculator.right = 20;
+      function sum(){
+        return MYAPP.calculator.left + MYAPP.calculator.right;
+      }
+      document.write(sum());*/
+/*
+      (function(){
+        var MYAPP = {} //전역변수   ++불가피하게 전역변수를 사용하겠다.
+          MYAPP.calculator = {
+            'left' : null,
+            'right' : null
+          }
+          MYAPP.coordinate = {
+            'left' : null,
+            'right' : null,
+          }
+
+          MYAPP.calculator.left = 10;
+          MYAPP.calculator.right = 20;
+          function sum(){
+            return MYAPP.calculator.left + MYAPP.calculator.right;
+          }
+          document.write(sum());
+      }()) //익명함수로 인해 지역변수 #단하나의 전역변수를 허용하고싶지않다면
+      // 다른언어에서는 {}안에서만 지역변수로된다, javascript는 함수안에서만 지역변수로 유효*/
+      var i  = 5; //전역변수
+
+      function a(){
+        var i = 10; //지역변수
+        b(); //전역변수 사용  = 5 정의될떄 >>정적유효범위
+      }
+
+      function b(){
+        document.write(i); //정적유효범위
+      }
+      a();
+  </script>
+
+</body>
+</html>

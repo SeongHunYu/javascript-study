@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /* //이 객체는 분산되어있어 사용x
+    var person = ()
+    person.name = 'egoing';     //객체안의 변수 name을 속성(property)
+    person.introduce = function(){ //객체안의 함수를정의 method
+      return 'My name is ' +this.name;
+    }
+    document.write(person.introduce());
+    */
+    /* // 분산을막고 객체안에 담는다 하지만 여러사람을 받고싶다면 극도로싫어하는 중복이발생.
+    var person1 = {
+      'name' : 'egoing',
+      'introduce' : function(){
+        return 'My name is ' +this.name;
+      }
+    }
+    document.write(person.introduce());
+    var person2 = {
+      'name' : 'egoing',
+      'introduce' : function(){
+        return 'My name is ' +this.name;
+      }
+    }
+    document.write(person.introduce());
+    */
+
+    /* //여러사람을 위한객체를 만든다면 이것이다 하지만 위와같이 별로 개선된것이없다.
+    function Person(){}
+    var p1 = new Person(); //new를 붙이면 Person이라는 새로운 객체가 만들어진다
+    p1.name = 'egoing';
+    p1.introduce = function(){
+      return 'My name is ' +this.name;
+    }
+    document.wrtie(p.introduce());
+
+    function Person(){}
+    var p2 = new Person(); //new를 붙이면 Person이라는 새로운 객체가 만들어진다
+    p2.name = 'egoing';
+    p2.introduce = function(){
+      return 'My name is ' +this.name;
+    }
+    document.wrtie(p.introduce());
+    */
+
+    function Person(name){
+      this.name = name;
+      this.introduce = function(){
+        return 'My name is ' +this.name;
+      }
+    }
+    var p1 = new Person('egoing');
+    document.wrtie(p1.introduce()+"<br>");   //생성자는 초기화를 한다.
+
+    var p2 = new Person('leezche');
+    document.write(p2.introduce());
+  </script>
+</body>
+</html>

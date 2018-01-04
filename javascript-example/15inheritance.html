@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*function Person(name){
+      this.name = name;
+      this.introduce = function(){
+        return 'My name is' +this.name;
+      }
+    }
+    var p1 = new Person('egoing');
+    document.write(p1.introduce()+"<br>");*/
+    /* //상속의 기본준비
+    function Person(name){
+      this.name = name;
+    }
+    Person.prototype.name = null;
+    Person.prototype.introduce = function(){
+      return 'My name is' +this.name;
+    }
+    var p1 = new Person('egoing');
+    document.write(p1.introduce()+"<br>");
+    */
+    /* //아직 기능추가안함 상속방법.
+    function Person(name){
+      this.name = name;
+    }
+    Person.prototype.name = null;
+    Person.prototype.introduce = function(){
+      return 'My name is' +this.name;
+    }
+
+    function Programmer(name){
+      this.name = name;
+    }
+    Programmer.prototype = new Person();
+
+    var p1 = new Programmer('egoing');
+    document.write(p1.introduce()+"<br>");
+    */
+
+    function Person(name){
+      this.name = name;
+    }
+    Person.prototype.name = null;
+    Person.prototype.introduce = function(){
+      return 'My name is ' +this.name;
+    }
+
+    function Programmer(name){
+      this.name = name;
+    }
+    Programmer.prototype = new Person();
+    Programmer.prototype.coding = function(){   //상속 기능추가
+      return 'Hello World';
+    }
+
+    function Designer(name){
+      this.name = name;
+    }
+    Designer.prototype = new Person();
+    Designer.prototype.design = function(){
+      return 'Design';
+    }
+
+    var p1 = new Programmer('egoing');
+    document.write(p1.introduce()+"<br>");
+    document.write(p1.coding()+"<br>");
+
+    var p2 = new Designer('leezche');
+    document.write(p2.introduce()+"<br>");
+    document.write(p2.design()+"<br>");
+  </script>
+</body>
+</html>

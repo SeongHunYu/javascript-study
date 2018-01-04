@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*function sum(arg1, arg2){
+      return arg1 + arg2;
+    }
+    alert(sum.apply(null, [1,2])); //이코드는 쓰면안돼고 첫번쨰인자에 null아니고다른것
+    */
+
+    o1 = {val1:1, val2:2, val3:3}
+    o2 = {v1:10, v2:50, v3:100, v4:25}
+    function sum(){
+      var _sum = 0;
+      for(name in this){  // this 호출할떄 정해짐 이상황에선
+        _sum += this[name];
+      }
+      return _sum;
+    }
+    alert(sum.apply(o1)); //6 sum을 호출할떄 객체o1를 이용 >> this로됌. var this = o1;
+    alert(sum.apply(o2)); //185 o2.sum
+  </script>
+</body>
+</html>
